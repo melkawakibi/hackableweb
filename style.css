@@ -1,0 +1,52 @@
+.container{
+	position: relative;
+	width: 1200px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.nav{
+	height: 20%;
+}
+
+.nav ul{
+	padding: 0;
+}
+
+.nav li{
+	float: left;
+	list-style: none;
+	margin-right: 10px;
+}
+
+.login{
+	float: right!important;
+}
+
+.content{
+	position: relative;
+	height: 80%;
+}
+
+.content ul li{
+	list-style: none;
+}
+
+.page_nav{
+	position: relative;
+	height: 10%;
+	width: 700px;
+	margin: 0 auto;
+}
+
+.page_nav li{
+	list-style: none;
+}
+
+.page_nav .next{
+	float:right;
+}
+
+.page_nav .prev{
+	float:left;
+}
