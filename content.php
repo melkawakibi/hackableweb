@@ -12,10 +12,10 @@
 
 		while ($product = $products->fetch_assoc()) {
 		?>
-		<ul class="products">
+		<ul class="lfloat">
 			<?php echo '<li><a href="products.php?id='. $product['id'] . '">' . $product['name'] . '</a></li>'; ?>
 			<li><?php printf('price: € %s,-', $product['price']) ?></li>
-			</a>
+			<?php echo '<li><a href="shopping.php?id='. $product['id'] . '">add</a></li>'; ?>
 		</ul>
 	<?php
 				}

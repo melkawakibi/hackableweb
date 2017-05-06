@@ -9,12 +9,15 @@
 		$pass = $_POST['pass'];
 
 		$res = $db->run_query_num_row( "SELECT * FROM user WHERE username = '$username' and password = '$pass'");
-		$user = $db->run_query_find_one( "SELECT role FROM user WHERE username = '$username'");
+		$user = $db->run_query_find_one( "SELECT id, username, role FROM user WHERE username = '$username'");
+
+		echo $user->username;
 
 		if($res){
 		    echo '<script> location.replace("index.php"); </script>';
-		    $_SESSION['username'] = $username;
-		    $_SESSION['role']= $user->role;
+		    $_SESSION['id'] = $user->id;
+		    $_SESSION['username'] = $user->username;
+		    $_SESSION['role']= $user->role;    
 		}else{
 			echo 'error error error'; 
 		}
@@ -30,12 +33,14 @@
 
 		$res = $db->run_query_insert( "INSERT INTO user (username, password, role) VALUES ('$username','$pass', 2)" );
 
-		echo 'this insert';
+		$user = $db->run_query_find_one( "SELECT id, username, role FROM user WHERE username = '$username'");
 
-		$res = $db->run_query_insert( "INSERT INTO customer (name, address, bankaccount ) VALUES ('$name','$address', '$account')" );
+		$res = $db->run_query_insert( "INSERT INTO customer (name, address, bankaccount, userid ) VALUES ('$name','$address', '$account', '$user->id')" );
 
-		$_SESSION['username'] = $username;
-		$_SESSION['role']= 2;
+		$_SESSION['id'] = $user->id;
+		$_SESSION['username'] = $user->username;
+		$_SESSION['role']= $user->role;
+
 		echo '<script> location.replace("index.php"); </script>';
 	}
 

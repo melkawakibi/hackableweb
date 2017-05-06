@@ -6,8 +6,16 @@
 	<header>
 		<?php
 			if(isset($_SESSION['username']) && $_SESSION['role'] == 2){
-			echo '<img class="shopcart" src="/img/shoppingcart.png"></img>';
-		}
+
+				$db = new database('root','root','unsafedb');
+
+				$customer = $db->run_query_find_one( "SELECT * FROM customer where userid=" . $_SESSION['id'] );
+
+				$cart_count = $db->run_query_num_row("SELECT * FROM shoppingcart WHERE customerid='$customer->id'");
+
+				echo '<img class="shopcart" src="/img/shoppingcart.png"></img>';
+				echo '<div class="shopcart">' . $cart_count . '</div>';
+			}
 		?>
 		<h1>HACKABLEWEB</h1>
 	</header>

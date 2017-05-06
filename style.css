@@ -69,7 +69,11 @@
 	float:left;
 }
 
-.products{
+.rfloat{
+	float:right;	
+}
+
+.lfloat{
 	float:left;	
 }
 
@@ -77,4 +81,13 @@
 	float: right;
 	width: 20px;
 	height: 20px;
+}
+
+.shopcart{
+	float: right;
+	
+}
+
+input[type="number"] {
+   width:50px;
 }
