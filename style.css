@@ -1,9 +1,34 @@
-.container{
+@media screen and (min-width: 800px){
+	.container{
+		position: relative;
+		width: 1000px;
+		height: 500px;
+		margin: 0 auto;
+	}
+
+	.page_nav{
+		position: relative;
+		height: 10%;
+		width: 1000px;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 800px){
+	.container{
+		position: relative;
+		width: 500px;
+		height: 500px;
+		margin: 0 auto;
+	}
+}
+
+.page_nav{
 	position: relative;
-	width: 1200px;
-	height: 500px;
+	height: 10%;
+	width: 500px;
 	margin: 0 auto;
 }
+
 
 .nav{
 	height: 20%;
@@ -30,13 +55,6 @@
 
 .content ul li{
 	list-style: none;
-}
-
-.page_nav{
-	position: relative;
-	height: 10%;
-	width: 700px;
-	margin: 0 auto;
 }
 
 .page_nav li{

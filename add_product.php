@@ -1,21 +1,7 @@
-<?php
-include 'session.php';
-include 'insert.php';
-	
-	$db = new database('root','root','unsafedb'); 	
-
-	if(!isset($_SESSION['username'])){
-		exit(header("Location: index.php"));
-	}
-
-?>
-
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Webshop</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+	<?php include 'header.php'; ?>
+	<?php include 'insert.php';	?>
 <body>
 	<div class="container">
 		

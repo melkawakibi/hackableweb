@@ -1,6 +1,16 @@
+<?php
+	session_start();
+
+	if(!isset($_SESSION['username'])){
+		exit(header('Location: index.php'));
+	}
+?>
 <!DOCTYPE html>
 <html>
-	<?php include 'header.php'; ?>
+	<?php 
+		include 'header.php';
+		$db = new database('root','root','unsafedb');
+	?>
 <body>
 	<div class="container">
 		
@@ -14,18 +24,19 @@
 				echo '<a href="add_product.php">add product</a>';
 				
 				$products = $db->run_query_find_all( 'SELECT * FROM product');
-
-				foreach($products as $product){ ?>
-				<ul><?php echo '<a href="products.php?id='. $product[0] . '">' ?>
-					<li><?php printf('name: %s', $product[1]) ?></li>
-					<li><?php printf('price: € %s,-', $product[2]) ?></li>
-					</a>
-					<hr>
-				</ul>
+				
+				while ($product = $products->fetch_assoc()) {
+			?>
+					<ul><?php echo '<a href="products.php?id='. $product['id'] . '">' ?>
+						<li><?php printf('name: %s', $product['name']) ?></li>
+						<li><?php printf('price: € %s,-', $product['price']) ?></li>
+						</a>
+						<hr>
+					</ul>
 			<?php
 				}
+
 			}
-				
 				include 'product_detail.php';
 
 			?>

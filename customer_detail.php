@@ -6,11 +6,10 @@ if(!empty($_GET['id'])){
 		?>
 		<ul> 
 			<li><?php printf('name: %s', $customer->name) ?></li>
-			<li><?php printf('address: %s, %s', $customer->city, $customer->street) ?></li>
+			<li><?php printf('address: %s', $customer->address) ?></li>
 			<li><?php printf('bank account: %s', $customer->bankaccount) ?></li>
 			<hr>
 		</ul>
-
 
 		<div class="page_nav">
 			<ul>
@@ -19,8 +18,11 @@ if(!empty($_GET['id'])){
 					echo '<li class="prev"><a href="customers.php?id='. ($customer->id == 1 ? $customer->id :  $customer->id-1) . '"> prev</a></li>';
 				}
 
+				while($customers->fetch_assoc()){
+					$count++;
+				}
 
-				if(count($customers) > $customer->id){
+				if($count > $customer->id){
 					echo '<li class="next"><a href="customers.php?id='. ($customer->id+1) . '"> next</a></li>';
 				}
 			?>

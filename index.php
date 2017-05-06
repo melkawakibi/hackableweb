@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<?php include 'header.php'; ?>
@@ -8,7 +7,7 @@
 		<?php include 'nav.php'; ?>
 
 		<div class="content">
-			
+			<p>Deze site is hackable. Veel succes!</p>
 		</div>
 	</div>
 </body>

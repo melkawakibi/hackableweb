@@ -1,6 +1,5 @@
 <?php
-	ob_start();
-	include 'database.php';
+
 	$db = new database('root','root','unsafedb'); 	
 	
 	if(isset($_POST['product_submit'])){

@@ -16,12 +16,16 @@
 		<div class="page_nav">
 			<ul>
 			<?php
+
 				if($product->id > 1){ 
 					echo '<li class="prev"><a href="products.php?id='. ($product->id == 1 ? $product->id :  $product->id-1) . '"> prev</a></li>';
 				}
 
+				while($products->fetch_assoc()){
+					$count++;
+				}
 
-				if(count($products) > $product->id){
+				if($count > $product->id){
 					echo '<li class="next"><a href="products.php?id='. ($product->id+1) . '"> next</a></li>';
 				}
 			?>

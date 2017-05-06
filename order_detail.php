@@ -23,8 +23,11 @@ if(!empty($_GET['id'])){
 					echo '<li class="prev"><a href="orders.php?id='. ($order->id == 1 ? $order->id :  $order->id-1) . '"> prev</a></li>';
 				}
 
-
-				if(count($orders) > $order->id){
+				while($orders->fetch_assoc()){
+					$count++;
+				}
+				
+				if($count > $order->id){
 					echo '<li class="next"><a href="orders.php?id='. ($order->id+1) . '"> next</a></li>';
 				}
 			?>

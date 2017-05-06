@@ -9,7 +9,7 @@ class database
     var $db;
     
     # Constructor
-    function __construct( $user, $pass, $database, $host = 'localhost:8889' )
+    function __construct( $user, $pass, $database, $host = 'localhost')
     {
         # Connectie leggen
         $this->db = new mysqli( $host, $user, $pass, $database);
@@ -36,7 +36,6 @@ class database
     # Functie die de query uitvoert
     function run_query_find_all( $sql )
     {
-
         # Query uitvoeren en het resultaat wegschrijven in de $res var
         $res = $this->db->query($sql);
 
@@ -44,7 +43,7 @@ class database
         if( !$res )
             die( $this->db->error );
 
-        return $res->fetch_all();
+        return $res;
     }
 
         # Functie die de query uitvoert

@@ -1,8 +1,16 @@
+<?php
+	
+	session_start();
+
+	if(isset($_SESSION['username'])){
+		exit(header('Location: index.php'));
+	}
+
+?>
 <!DOCTYPE html>
 <html>
-	<?php 
+	<?php
 		include 'header.php'; 
-		include 'login_service.php';
 	?>
 <body>
 	<div class="container">
@@ -19,3 +27,7 @@
 	</div>
 </body>
 </html>
+
+<?php 
+	include 'login_service.php'; 
+?>
