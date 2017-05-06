@@ -1,12 +1,3 @@
-<?php
-	
-	session_start();
-
-	if(isset($_SESSION['username'])){
-		exit(header('Location: index.php'));
-	}
-
-?>
 <!DOCTYPE html>
 <html>
 	<?php
@@ -15,15 +6,24 @@
 <body>
 	<div class="container">
 	<?php include 'nav.php'; ?>
-		<form action="login.php" method="post">
-			<h3>Login</h3>
+		<form action="signin.php" method="post">
+			<h3>Sign in</h3>
 				username:<br>
 			  <input type="text" name="username">
 			  <br>
 			  	password:<br>
 			  <input type="password" name="pass">
+			  <br>
+			 	 name:<br>
+			  <input type="text" name="name">
+			  <br>
+			 	 address:<br>
+			  <input type="text" name="address">
+			  <br>
+			 	 bankaccount:<br>
+			  <input type="text" name="bankaccount">
 			  <br><br>
-			  <input type="submit" value="Submit" name="login_submit">
+			  <input type="submit" value="Submit" name="signin_submit">
 		</form>
 	</div>
 </body>

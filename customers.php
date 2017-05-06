@@ -3,7 +3,10 @@
 
 	if(!isset($_SESSION['username'])){
 		exit(header('Location: index.php'));
+	}else if($_SESSION['role'] != 1){
+		exit(header('Location: index.php'));
 	}
+
 ?>
 <!DOCTYPE html>
 <html>

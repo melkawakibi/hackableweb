@@ -1,4 +1,3 @@
-
 <?php
 if(!empty($_GET['id'])){
 		$customer = $db->run_query_find_one( 'SELECT * FROM customer where id=' . $_GET['id']);

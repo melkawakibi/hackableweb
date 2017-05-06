@@ -1,10 +1,12 @@
-
 <?php
 	session_start();
 
 	if(!isset($_SESSION['username'])){
 		exit(header('Location: index.php'));
+	}else if($_SESSION['role'] != 1){
+		exit(header('Location: index.php'));
 	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,12 +40,7 @@
 
 					<p>
 
-					<?php $product = $db->run_query_find_one( 'SELECT * FROM product where id=' . $order['productid']); ?>
-
-						<li><?php echo '<a href="products.php?id='. $product->id . '">'; printf('product: %s', $product->name) ?></a></li>
-						</a>
-
-						<hr>
+					<hr>
 					</ul>
 			<?php
 				}

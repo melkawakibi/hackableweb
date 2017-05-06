@@ -9,7 +9,6 @@
 		<ul> 
 			<li><?php printf('name: %s', $product->name) ?></li>
 			<li><?php printf('price: € %s,-', $product->price) ?></li>
-			<!-- <li ><?php echo '<a href="delete.php?id=' . $product->id . '">delete</a>'; ?></li> -->
 			<hr>
 		</ul>
 

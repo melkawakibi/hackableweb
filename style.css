@@ -68,3 +68,13 @@
 .page_nav .prev{
 	float:left;
 }
+
+.products{
+	float:left;	
+}
+
+.shopcart{
+	float: right;
+	width: 20px;
+	height: 20px;
+}
