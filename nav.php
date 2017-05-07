@@ -13,8 +13,11 @@
 
 				$cart_count = $db->run_query_num_row("SELECT * FROM shoppingcart WHERE customerid='$customer->id'");
 
-				echo '<img class="shopcart" src="/img/shoppingcart.png"></img>';
-				echo '<div class="shopcart">' . $cart_count . '</div>';
+				echo '<a href="shopping.php"><img class="shopcart" src="/img/shoppingcart.png"></img></a>';
+
+				if($cart_count >= 1){
+					echo '<div class="circle"><div id="cart_countid" class="cart_count">' . $cart_count . '</div></div>';
+				}
 			}
 		?>
 		<h1>HACKABLEWEB</h1>

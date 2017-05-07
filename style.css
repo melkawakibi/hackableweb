@@ -85,7 +85,24 @@
 
 .shopcart{
 	float: right;
-	
+}
+
+.cart_count{
+	float: right;
+	color: #fff;
+	font-size: 11px;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+.circle{
+	float: right;
+	width: 15px;
+	height: 15px;
+	background: #d3d3d3;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
 }
 
 input[type="number"] {

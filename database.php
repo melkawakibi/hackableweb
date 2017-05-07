@@ -57,6 +57,16 @@ class database
         return $res;
     }
 
+    function run_query_update( $sql )
+    {   
+        $res = $this->db->query($sql);
+        
+        if( !$res )
+            die( $this->db->error );
+
+        return $res;
+    }
+
     function database_close( )
     {
         $this->db->close();

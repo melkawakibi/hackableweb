@@ -15,7 +15,7 @@
 		<ul class="lfloat">
 			<?php echo '<li><a href="products.php?id='. $product['id'] . '">' . $product['name'] . '</a></li>'; ?>
 			<li><?php printf('price: € %s,-', $product['price']) ?></li>
-			<?php echo '<li><a href="shopping.php?id='. $product['id'] . '">add</a></li>'; ?>
+			<?php echo '<li><a href="shopping_product.php?id='. $product['id'] . '">add</a></li>'; ?>
 		</ul>
 	<?php
 				}
