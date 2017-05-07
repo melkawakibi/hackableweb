@@ -7,7 +7,7 @@
 	<div class="container">
 	<?php include 'nav.php'; ?>
 		<form action="signin.php" method="post">
-			<h3>Sign in</h3>
+			<h3>Sign up</h3>
 				username:<br>
 			  <input type="text" name="username">
 			  <br>

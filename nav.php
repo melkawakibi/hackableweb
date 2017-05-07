@@ -35,13 +35,14 @@
 					echo '<li class="login"><a href="logout.php">logout</a></li>';
 					echo '<li class="login">' . $_SESSION['username'] . '</li>';
 				}else if($_SESSION['role'] == 2){
+					echo '<li><a href="#">My Orders</a></li>';
 					echo '<li>|| CUSTOMER PANEL</li>';
 					echo '<li class="login"><a href="logout.php">logout</a></li>';
 					echo '<li class="login">' . $_SESSION['username'] . '</li>';
 				}
 			}else{
 				echo '<li class="login"><a href="login.php">login</a></li>';
-				echo '<li class="login"><a href="signin.php">sign in</a></li>';
+				echo '<li class="login"><a href="signin.php">sign up</a></li>';
 			}
 		?>
 	</ul>

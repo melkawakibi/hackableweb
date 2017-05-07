@@ -11,8 +11,6 @@
 		$res = $db->run_query_num_row( "SELECT * FROM user WHERE username = '$username' and password = '$pass'");
 		$user = $db->run_query_find_one( "SELECT id, username, role FROM user WHERE username = '$username'");
 
-		echo $user->username;
-
 		if($res){
 		    echo '<script> location.replace("index.php"); </script>';
 		    $_SESSION['id'] = $user->id;

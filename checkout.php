@@ -8,7 +8,7 @@
 
 		<div class="content">
 			
-			<h3>Shoppingcart</h3>
+			<h3>Checkout</h3>
 
 			<?php
 				
@@ -27,36 +27,22 @@
 
 					while($c = $cart->fetch_assoc()){
 						$total += ($c['price'] * $c['amount']);
-						?>
-						<hr>
-						<table>
-							<tr>
-								<th>name |</th>
-								<th>price | </th>
-								<th>amount | </th>
-								<th>sub total</th>
-							</tr>
-							<tr>
-								<td><?php echo $c['name'] ?></td>
-								<td><?php printf('€%s,-', $c['price']) ?></td>
-								<td><?php echo $c['amount'] ?></td>
-								<td><?php printf('€%s,-', ($c['price'] * $c['amount'])) ?></td>
-							</tr>
-						</table>
-				<?php		
+						$count ++;
 					}
-				?>		
-						<hr>
-						<table>
-							<tr>
-								<th>Total</th>
-							<tr>
-							<tr>
-								<td><?php printf('€%s,-',$total) ?></td>
-							<tr>
-						</table>
+				?>	
 
-				<a class="rfloat" href="checkout.php">Check out</a>
+				<table class="checkout_tb">
+					<tr>
+						<th>Amount |</th>
+						<th>Total</th>
+					</tr>
+					<tr>
+						<td><?php echo $count . ' products |'?></td>
+						<td><?php printf('€%s,-',$total) ?></td>
+					</tr>
+				</table>
+				<p>Are you done shopping?</p>
+				<a href="index.php">Continue shopping</a> | <a href="orderproces.php">Place order</a>
 		</div>
 	</div>
 </body>

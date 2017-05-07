@@ -87,9 +87,9 @@
 							</tr>
 							<tr>
 								<td><?php echo $c['name'] ?></td>
-								<td><?php echo $c['price'] ?></td>
+								<td><?php printf('€%s,-', $c['price']) ?></td>
 								<td><?php echo $c['amount'] ?></td>
-								<td><?php echo ($c['price'] * $c['amount']) ?></td>
+								<td><?php printf('€%s,-', ($c['price'] * $c['amount'])) ?></td>
 							<tr>
 						</table>
 				<?php		
