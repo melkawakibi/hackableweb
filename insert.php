@@ -15,7 +15,7 @@
 			$res = $db->run_query_insert( "INSERT INTO product (name, price) VALUES ('$name','$price')" );
 
 			if($res){
-				exit(header("Location: products.php"));
+				echo '<script> location.replace("index.php"); </script>';
 			}else{
 				echo 'error error';
 			}

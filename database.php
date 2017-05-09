@@ -67,6 +67,16 @@ class database
         return $res;
     }
 
+    function run_query_delete( $sql )
+    {   
+        $res = $this->db->query($sql);
+        
+        if( !$res )
+            die( $this->db->error );
+
+        return $res;
+    }
+
     function database_close( )
     {
         $this->db->close();

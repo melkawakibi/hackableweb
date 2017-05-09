@@ -44,6 +44,8 @@
 
 					if(isset($_POST['submit'])){
 
+						echo 'Customer id ' . $customer->id;
+
 						$name = $_POST['product_name'];
 						$price = $_POST['product_price'];
 						$amount = $_POST['product_amount'];
