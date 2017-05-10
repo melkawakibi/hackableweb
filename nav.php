@@ -35,7 +35,7 @@
 					echo '<li class="login"><a href="logout.php">logout</a></li>';
 					echo '<li class="login">' . $_SESSION['username'] . '</li>';
 				}else if($_SESSION['role'] == 2){
-					echo '<li><a href="#">My Orders</a></li>';
+					echo '<li><a href="my_orders.php">My Orders</a></li>';
 					echo '<li>|| CUSTOMER PANEL</li>';
 					echo '<li class="login"><a href="logout.php">logout</a></li>';
 					echo '<li class="login">' . $_SESSION['username'] . '</li>';

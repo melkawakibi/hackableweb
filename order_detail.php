@@ -10,7 +10,12 @@ if(!empty($_GET['id'])){
 		$customer = $db->run_query_find_one( 'SELECT * FROM customer where id=' . $order->customerid);
 ?>
 		<h3><?php printf('Order: %s', $order->name) ?></h3>
-		<h4><?php printf('Customer: %s', $customer->name) ?></h4>
+		
+		<?php if($_SESSION['role'] == 1){ ?>
+			<h4><?php printf('Customer: %s', $customer->name) ?></h4>
+		<?php
+				}
+		?>
 <?php		
 		$products = Array();
 		
