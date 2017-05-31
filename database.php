@@ -28,6 +28,7 @@ class database
         
   function run_query_find_all( $sql )
     {
+
         $res = $this->db->query($sql);
 
         if( !$res )

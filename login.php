@@ -7,6 +7,7 @@
 	}
 
 ?>
+
 <!DOCTYPE html>
 <html>
 	<?php
@@ -14,7 +15,13 @@
 	?>
 <body>
 	<div class="container">
-	<?php include 'nav.php'; ?>
+		<?php 
+
+			include 'nav.php';
+			include 'search.php'; 
+
+		?>
+		
 		<form action="login.php" method="post">
 			<h3>Login</h3>
 				username:<br>

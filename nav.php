@@ -2,6 +2,7 @@
 	
 	session_start();
 ?>
+
 <div class="nav">
 	<header>
 		<?php
@@ -44,6 +45,14 @@
 				echo '<li class="login"><a href="login.php">login</a></li>';
 				echo '<li class="login"><a href="signin.php">sign up</a></li>';
 			}
+
+			echo '<br><br><div class="search">
+						<form action="search.php" method="post"> 
+	      					<label>search products</label> 
+	      					<input name="search" type="text" size="10"> 
+	     					<input name="goButton" type="submit" value="go"> 
+	   					</form>
+   		 		 </div>';
 		?>
 	</ul>
 </div>

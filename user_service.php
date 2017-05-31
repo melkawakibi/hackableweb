@@ -8,23 +8,33 @@
 		$username = $_POST['username'];
 		$pass = $_POST['pass'];
 
-		$res = $db->run_query_num_row( "SELECT * FROM user WHERE username = '$username' and password = '$pass'");
-		$user = $db->run_query_find_one( "SELECT id, username, role FROM user WHERE username = '$username'");
+		$res = $db->run_query_find_one( "SELECT password FROM user WHERE username = '$username'");
 
-		if($res){
-		    echo '<script> location.replace("index.php"); </script>';
-		    $_SESSION['id'] = $user->id;
-		    $_SESSION['username'] = $user->username;
-		    $_SESSION['role']= $user->role;    
+		$hash = $res->password;
+
+		if(password_verify($pass, $hash)){
+
+			$res = $db->run_query_num_row( "SELECT * FROM user WHERE username = '$username' and password = '$hash'");
+			$user = $db->run_query_find_one( "SELECT id, username, role FROM user WHERE username = '$username'");
+
+			if($res){
+			    echo '<script> location.replace("index.php"); </script>';
+			    $_SESSION['id'] = $user->id;
+			    $_SESSION['username'] = $user->username;
+			    $_SESSION['role']= $user->role;    
+			}else{
+				echo 'error error error'; 
+			}
+			
 		}else{
-			echo 'error error error'; 
+			echo 'credentails are wrong'; 
 		}
 	}
 
 	if(isset($_POST['signin_submit'])){
 
 		$username = $_POST['username'];
-		$pass = $_POST['pass'];
+		$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 		$name = $_POST['name'];
 		$address = $_POST['address'];
 		$account = $_POST['bankaccount'];

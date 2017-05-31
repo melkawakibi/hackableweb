@@ -4,7 +4,11 @@
 <body>
 	<div class="container">
 		
-		<?php include 'nav.php'; ?>
+		<?php 
+
+			include 'nav.php';
+			include 'search.php'; 
+		?>
 
 		<div class="content">
 			<p>Deze site is hackable. Veel succes!</p>

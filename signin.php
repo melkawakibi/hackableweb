@@ -5,7 +5,10 @@
 	?>
 <body>
 	<div class="container">
-	<?php include 'nav.php'; ?>
+	<?php 
+	    include 'nav.php'; 
+		include 'search.php'; 
+	?>
 		<form action="signin.php" method="post">
 			<h3>Sign up</h3>
 				username:<br>
